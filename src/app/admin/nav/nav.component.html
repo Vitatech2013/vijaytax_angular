@@ -1,0 +1,71 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav mat-elevation-z0" fixedInViewport style="background-color:#607D8B;color:white;"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="(isHandset$ | async) === false">
+    <mat-toolbar   style="background-color:#607D8B;color:white;">
+      <!-- <img src="../../../assets/nsm.jpg" alt="NSM" class="logo"> -->
+      <span class="spacer"></span>
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()" *ngIf="isHandset$">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <mat-nav-list class="sidenav-list">
+
+      <a class="nav-compound" mat-list-item [routerLink]="['/admin']" routerLinkActive="router-link-active"
+        [routerLinkActiveOptions]="{exact: true}">
+        <!-- <mat-icon>dashboard</mat-icon> -->
+         Dashboard</a>
+      <a class="nav-compound" mat-list-item [routerLink]="['/admin/add-files']" routerLinkActive="router-link-active">
+        <!-- <mat-icon>add_shopping_cart</mat-icon> -->
+         Files</a>
+         <a class="nav-compound" mat-list-item [routerLink]="['/admin/expenses']" routerLinkActive="router-link-active">
+          <!-- <mat-icon>add_shopping_cart</mat-icon> -->
+           Files</a></mat-nav-list>
+
+      <!-- <mat-expansion-panel class="sidenav-list mat-elevation-z0"  style="background-color:#607D8B;color: white;">
+        <mat-expansion-panel-header>
+          <mat-panel-title  style="color: white;">
+            <mat-icon>reports</mat-icon>
+            <div>Reports</div>
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <mat-nav-list>
+          <a class="nav-emp"  mat-list-item [routerLink]="['/admin/salesReports']" routerLinkActive="router-link-active">
+            <mat-icon>person</mat-icon> Sales</a>
+          <a class="nav-emp"  mat-list-item [routerLink]="['/admin/purchaseReports']" routerLinkActive="router-link-active">
+            <mat-icon>person</mat-icon>Purchase</a>
+          <a class="nav-emp" mat-list-item [routerLink]="['/admin/expensesReports']" routerLinkActive="router-link-active">
+            <mat-icon>person</mat-icon> Expenses</a>
+          <a class="nav-emp"  mat-list-item [routerLink]="['/admin/saleItemsReports']" routerLinkActive="router-link-active">
+            <mat-icon>person</mat-icon> Sale Items</a>
+          <a class="nav-emp"  mat-list-item [routerLink]="['/admin/purchaseItemsReports']" routerLinkActive="router-link-active">
+            <mat-icon>person</mat-icon>Purchase Items</a>
+        </mat-nav-list>
+      </mat-expansion-panel>
+    </mat-accordion> -->
+   </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar class="mat-elevation-z1"  style="background-color:#607D8B;color: white;">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button *ngIf="drawer.opened === false"
+        (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span>Vijay Associations</span>
+      <span class="spacer"></span>
+      <!-- <span class="lastLogin"> Last Login <br>{{ lastLogin | date: 'short' }}</span> -->
+       <!-- <img [src]="url+'/'+ image" -->
+      <!-- <img src="../../assets/img_avatar.png" mat-card-avatar class="example-header-image" [matMenuTriggerFor]="menu" alt=""> -->
+      <!-- <mat-menu #menu="matMenu">
+        <button mat-menu-item [routerLink]="['/admin/profile']" routerLinkActive="router-link-active">
+          <mat-icon>person</mat-icon>Profile
+        </button>
+        <button mat-menu-item (click)="logout()">
+          <mat-icon>logout</mat-icon>Logout
+        </button>
+      </mat-menu> -->
+    </mat-toolbar>
+    <div class="container">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

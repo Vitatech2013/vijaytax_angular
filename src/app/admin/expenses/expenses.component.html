@@ -1,0 +1,49 @@
+<mat-card class="mat-elevation-z3">
+  <form [formGroup]="formGroup">
+      <div class="row">
+          <div class="col-sm-4">
+              <!-- <mat-form-field appearance="outline">
+                  <mat-label>Income/Gst</mat-label>
+                  <input matInput placeholder="Income/Gst" formControlName="incometype">
+              </mat-form-field> -->
+              <mat-form-field appearance="outline">
+                <mat-label>Expense Type</mat-label>
+                <mat-select formControlName="expenseType">
+                    <mat-option value="income">Income</mat-option>
+                    <mat-option value="gst">Gst</mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field appearance="outline" >
+                <mat-label>Payment Type</mat-label>
+                <mat-select formControlName="paymentType">
+                  <mat-option value="cash">Cash</mat-option>
+                  <mat-option value="gpay">Gpay</mat-option>
+              </mat-select>
+            </mat-form-field>
+        </div>
+          <div class="col-sm-4">
+              <mat-form-field appearance="outline" >
+                  <mat-label>Amount</mat-label>
+                  <input matInput placeholder="Amount" formControlName="amount">
+              </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-4">
+              <mat-form-field appearance="outline">
+                <mat-label>Note</mat-label>
+                <input matInput placeholder="Note" formControlName="note">
+            </mat-form-field>
+          </div>
+      </div>
+<div style="margin-left: 36%;">
+      <button mat-raised-button color="warn" type="reset" >Clear</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" mat-raised-button color="accent" [routerLink]="['/admin/em']"
+          routerLinkActive="router-link-active">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="submit" onClick="return false;"  mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+    </div>
+    </form>
+  <br>
+</mat-card>

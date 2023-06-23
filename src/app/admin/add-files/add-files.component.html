@@ -1,0 +1,133 @@
+<mat-card class="mat-elevation-z3">
+  <form [formGroup]="formGroup">
+      <div class="row">
+          <div class="col-sm-4">
+              <!-- <mat-form-field appearance="outline">
+                  <mat-label>Income/Gst</mat-label>
+                  <input matInput placeholder="Income/Gst" formControlName="incometype">
+              </mat-form-field> -->
+              <mat-form-field appearance="outline">
+                <mat-label>Income/Gst</mat-label>
+                <mat-select formControlName="incomeType">
+                    <mat-option value="income">Income</mat-option>
+                    <mat-option value="gst">Gst</mat-option>
+                </mat-select>
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field appearance="outline" >
+                <mat-label>Pan Number</mat-label>
+                <input matInput placeholder="Pan Number" formControlName="panNo">
+            </mat-form-field>
+        </div>
+          <div class="col-sm-4">
+              <mat-form-field appearance="outline" >
+                  <mat-label>UserName</mat-label>
+                  <input matInput placeholder="UserName" formControlName="userName">
+              </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+              <mat-form-field appearance="outline">
+                  <mat-label>Mobile Number</mat-label>
+                  <input matInput formControlName="mobile" placeholder="Mobile Number" maxlength="10">
+                  <!-- <mat-error
+                      *ngIf="!fileForm.get('mobile').hasError('required') &&fileForm.get('mobile').hasError('pattern')">
+                      Please enter valid Mobilenumber
+                  </mat-error> -->
+              </mat-form-field>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-sm-4">
+              <!-- <mat-form-field appearance="outline">
+                  <mat-label>Year Of Filing</mat-label>
+                  <input matInput placeholder="Year Of Filing" formControlName="yearoffiling">
+              </mat-form-field> -->
+              <mat-form-field appearance="outline">
+                <mat-label>Year</mat-label>
+                <!-- <input matInput [matDatepicker]="picker" formControlName="yearoffiling">
+                <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker> -->
+                <input matInput placeholder="Year" formControlName="year">
+
+            </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Total Amount</mat-label>
+                <input matInput formControlName="totalAmount" (change)="onKeyUpEvent($event)" placeholder="Total Amount" type="text">
+                <!-- <mat-error
+                    *ngIf="!fileForm.get('email').hasError('required') &&fileForm.get('email').hasError('pattern')">
+                    Please enter valid EmailId
+                </mat-error> -->
+            </mat-form-field>
+        </div>
+          <div class="col-sm-4">
+              <mat-form-field appearance="outline">
+                  <mat-label>Paid Amount</mat-label>
+                  <input matInput formControlName="paidAmount" (change)="onKeyUpEvent($event)" placeholder="Paid Amount" type="text">
+                  <!-- <mat-error
+                      *ngIf="!fileForm.get('email').hasError('required') &&fileForm.get('email').hasError('pattern')">
+                      Please enter valid EmailId
+                  </mat-error> -->
+              </mat-form-field>
+          </div>
+          <div class="col-sm-4">
+            <mat-form-field appearance="outline">
+                <mat-label>Due Amount</mat-label>
+                <input matInput formControlName="dueAmount" readonly="" placeholder="Due Amount" type="text">
+                <!-- <mat-error
+                    *ngIf="!fileForm.get('email').hasError('required') &&fileForm.get('email').hasError('pattern')">
+                    Please enter valid EmailId
+                </mat-error> -->
+            </mat-form-field>
+        </div>
+        <div class="col-sm-4">
+          <!-- <mat-form-field appearance="outline">
+              <mat-label>Income/Gst</mat-label>
+              <input matInput placeholder="Income/Gst" formControlName="incometype">
+          </mat-form-field> -->
+          <mat-form-field appearance="outline">
+            <mat-label>Payment Type</mat-label>
+            <mat-select formControlName="paymentType">
+                <mat-option value="cash">Cash</mat-option>
+                <mat-option value="gpay">Gpay</mat-option>
+            </mat-select>
+        </mat-form-field>
+      </div>
+      <div class="col-sm-4">
+        <mat-form-field appearance="outline">
+            <mat-label>Note</mat-label>
+            <input matInput formControlName="note" placeholder="Note" type="text">
+            <!-- <mat-error
+                *ngIf="!fileForm.get('email').hasError('required') &&fileForm.get('email').hasError('pattern')">
+                Please enter valid EmailId
+            </mat-error> -->
+        </mat-form-field>
+    </div>
+      </div>
+      <!-- <div class="row">
+          <div class="col-sm-4">
+              <mat-form-field appearance="outline">
+                  <mat-label>Date Of Birth</mat-label>
+                  <input matInput [matDatepicker]="picker" formControlName="dob">
+                  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                  <mat-datepicker #picker></mat-datepicker>
+              </mat-form-field>
+          </div>
+          <div class="col-sm-8">
+              <mat-form-field appearance="outline">
+                  <mat-label>Address</mat-label>
+                  <input matInput placeholder="Address" formControlName="address">
+              </mat-form-field>
+          </div>
+      </div> -->
+<div style="margin-left: 36%;">
+      <button mat-raised-button color="warn" type="reset" >Clear</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" mat-raised-button color="accent" [routerLink]="['/admin/em']"
+          routerLinkActive="router-link-active">Cancel</button>&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="submit" onClick="return false;" mat-raised-button color="primary" (click)="onSubmit()">Save</button>
+    </div>
+    </form>
+  <br>
+</mat-card>
